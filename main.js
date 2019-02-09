@@ -1,14 +1,15 @@
 import GameLoop from './gameloop.js';
+import Counter from './counter.js';
 
 const canvas = document.getElementById('screen');
 const ctx = canvas.getContext('2d');
-
-console.log('hello world');
-
-ctx.beginPath();
-ctx.moveTo(11.5, 0);
-ctx.lineTo(11.5, 11);
-ctx.stroke();
-
+const counter = new Counter();
 const loop = new GameLoop();
 loop.routine();
+
+for(let i=0; i<250; i++){
+    counter.increment()
+}
+
+ctx.font = "30px kittyfont";
+ctx.fillText(counter.getCounter(),100,100);
