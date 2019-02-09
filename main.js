@@ -17,12 +17,12 @@ const debris = new Debris();
 loop.que.push(counter)
 loop.que.push(cat)
 loop.que.push(debris)
-loop.que.push(ClickableObject)
+loop.que.push(testObj)
 
 loop.routine();
 
 canvas.addEventListener('click', (e) => {
-    //window._GameManager.state.lastClick = {x: e.clientX, y: e.clientY}
+    window._GameManager.state.lastClicked = {x: e.clientX, y: e.clientY}
     counter.increment();
 })
 

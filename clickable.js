@@ -24,7 +24,7 @@ ClickableObject.prototype.clicked = function(clickPos){
     }
     return false;
 }
-ClickableObject.prototype.update = function(){
+ClickableObject.prototype.update = function(delta){
     if(this.clicked(window.GameManager.state.lastClicked)){
         //TODO: actually delete this object
         console.log('you hit me');
