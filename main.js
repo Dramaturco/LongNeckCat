@@ -5,15 +5,10 @@ const canvas = document.getElementById('screen');
 const ctx = canvas.getContext('2d');
 const counter = new Counter();
 const loop = new GameLoop();
+
+loop.que.push(counter)
 loop.routine();
 
-for(let i=0; i<998; i++){
-    counter.increment()
-}
-
-counter.draw(ctx);
-
-window.debugButtonPressed = () =>{
+canvas.addEventListener('click', () => {
     counter.increment();
-    console.log(counter.toString())
-}
+})
