@@ -43,9 +43,9 @@ GameLoop.prototype.routine = function (frameTimeMs) {
         this.que[index].update(this.delta)
         this.que[index].draw(this.ctx)
     }
-    console.log('update')
+    //console.log('update')
     
     // sound()
-    console.log(frameTimeMs)
+    //console.log(frameTimeMs)
     requestAnimationFrame(this.routine.bind(this))
 }

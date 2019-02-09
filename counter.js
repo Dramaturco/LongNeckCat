@@ -1,12 +1,14 @@
 export default function Counter(){
     this.unit = "m";
     this.counter = 0;
-    this.displayPosX = 100;
-    this.displayPosY = 100;
+}
+Counter.prototype.pos = {
+    x: 100,
+    y: 100
 }
 Counter.prototype.setPos = function(x, y){
-    this.displayPosX = x;
-    this.displayPosY = y;
+    this.pos.x = x;
+    this.pos.y = y;
 }
 Counter.prototype.incrementUnit = function() {
     switch(this.unit){
@@ -33,5 +35,5 @@ Counter.prototype.update = function() {
 }
 Counter.prototype.draw = function(context) {
     context.font = "30px kittyfont";
-    context.fillText(this.toString(),this.displayPosX,this.displayPosY);
+    context.fillText(this.toString(),this.pos.x,this.pos.y);
 }
