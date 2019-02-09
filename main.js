@@ -11,5 +11,4 @@ for(let i=0; i<250; i++){
     counter.increment()
 }
 
-ctx.font = "30px kittyfont";
-ctx.fillText(counter.getCounter(),100,100);
+counter.draw(ctx);
