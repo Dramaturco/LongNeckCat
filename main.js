@@ -7,8 +7,13 @@ const counter = new Counter();
 const loop = new GameLoop();
 loop.routine();
 
-for(let i=0; i<250; i++){
+for(let i=0; i<998; i++){
     counter.increment()
 }
 
 counter.draw(ctx);
+
+window.debugButtonPressed = () =>{
+    counter.increment();
+    console.log(counter.toString())
+}

@@ -2,3 +2,6 @@
     font-family: 'kittyfont';
     src: url('./Assets/Hand_Of_Sean_Demo.ttf');
 }
+#debugButton {
+    border: 1px solid black;
+}
