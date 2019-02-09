@@ -25,6 +25,7 @@ ClickableObject.prototype.update = function(delta){
     if(this.clicked(window.GameManager.state.lastClicked)){
         window.GameManager.state.lastClicked = {x:0, y:0}
         this.hide();
+        window.GameManager.state.incrementer(10);
     }
     const speed = 0.05 * delta
 

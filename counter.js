@@ -21,11 +21,15 @@ Counter.prototype.incrementUnit = function() {
     }
 }
 Counter.prototype.increment = function(incr = 1) {
+    console.log("increment called: ", incr)
     if(this.counter >= 999){
         this.counter = 1;
         this.incrementUnit();
     }
-    else this.counter += incr;
+    else {
+        this.counter += incr
+    }
+    console.log("counter is now: ", this.counter)
 }
 Counter.prototype.toString = function() {
     return `${this.counter}${this.unit}`;
