@@ -18,6 +18,11 @@ loop.que.push(counter)
 loop.que.push(cat)
 loop.que.push(testObj)
 
+const a = setInterval(function(){ 
+    console.log('add1')
+    loop.que.push(new ClickableObject(RANDOM_IMAGES[Math.floor((Math.random() * (RANDOM_IMAGES.length)))], {x: (Math.random() * 500) + 1, y: 1}))
+}, 500);
+
 loop.routine();
 
 canvas.addEventListener('click', (e) => {
