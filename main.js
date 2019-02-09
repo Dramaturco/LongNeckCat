@@ -22,7 +22,9 @@ loop.que.push(testObj)
 loop.routine();
 
 canvas.addEventListener('click', (e) => {
-    window._GameManager.state.lastClicked = {x: e.clientX, y: e.clientY}
+    const offset = canvas.getBoundingClientRect()
+    const clickpos = {x: e.clientX - offset.x, y: e.clientY - offset.y}
+    window.GameManager.state.lastClicked = clickpos
     counter.increment();
 })
 
