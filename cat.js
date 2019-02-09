@@ -1,8 +1,8 @@
 export default function Cat() {}
 
 Cat.prototype.pos = {
-    x: 200,
-    y: 500
+    x: 170,
+    y: 320
 }
 
 Cat.prototype.update = function() {
@@ -15,5 +15,5 @@ Cat.prototype.update = function() {
 Cat.prototype.draw = function(ctx) {
     const img = new Image();
     img.src = 'Assets/cat.svg'
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img, this.pos.x, this.pos.y);
 }

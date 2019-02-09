@@ -1,3 +1,5 @@
+import { lerp } from './math.js'
+
 export default function ClickableObject(imageUrl, pos = {x : 0, y : 0}) {
     this.img = new Image();
     this.img.src = imageUrl;
@@ -28,6 +30,14 @@ ClickableObject.prototype.update = function(delta){
         console.log(this);
         window.GameManager.state.lastClicked = {x:0, y:0}
         this.hide();
+    }
+    const speed = 0.05 * delta
+
+    if(!isNaN(speed)) {
+        // const targetVelocity = moveTowardsTo(150, 300, this.pos.x, this.pos.y, 2)
+        
+        this.pos.x = lerp(this.pos.x, 250, 0.01)
+        this.pos.y = lerp(this.pos.y, 400, 0.01)
     }
 }
 ClickableObject.prototype.hide = function(){

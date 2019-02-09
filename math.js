@@ -1,14 +1,18 @@
-export function moveTowardsTo (destX, destY, srcX, srcY) {
-    const dx = destX - srcX;
-    const dy = destY - srcY;
+export function moveTowardsTo (destX, destY, srcX, srcY, speed) {
+    // Rotate us to face the player
+    const rotation = Math.atan2(destX - srcX, destY - srcY);
 
-    const angle = Math.atan(dy, dx);
-
-    const magnitude = 1.0;
-    const velX = Math.cos(angle) * magnitude;
-    const velY = Math.sin(angle) * magnitude;
+    // Move towards the player
+    const velX = Math.cos(rotation) * speed;
+    const velY = Math.sin(rotation) * speed;
 
     return {x: velX,y: velY}
+}
+
+export function lerp (value1, value2, amount) {
+	amount = amount < 0 ? 0 : amount;
+	amount = amount > 1 ? 1 : amount;
+	return value1 + (value2 - value1) * amount;
 }
 
 export default {}
