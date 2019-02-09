@@ -11,11 +11,9 @@ ClickableObject.prototype.setPos = function(x,y){
     this.pos.y = y;
 }
 ClickableObject.prototype.draw = function(context) {
-    //this gets called but no image appears
     context.drawImage(this.img, this.pos.x, this.pos.y)
 }
 ClickableObject.prototype.clicked = function(clickPos){
-    //console.log(this)
     if(clickPos.x > this.pos.x && clickPos.x < this.pos.x + this.img.width){
         if(clickPos.y > this.pos.y && clickPos.y < this.pos.y + this.img.height){
             return true;
@@ -25,9 +23,6 @@ ClickableObject.prototype.clicked = function(clickPos){
 }
 ClickableObject.prototype.update = function(delta){
     if(this.clicked(window.GameManager.state.lastClicked)){
-        //TODO: actually delete this object
-        console.log('you hit me');
-        console.log(this);
         window.GameManager.state.lastClicked = {x:0, y:0}
         this.hide();
     }
