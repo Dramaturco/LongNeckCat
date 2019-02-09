@@ -26,7 +26,6 @@ GameLoop.prototype.routine = function (frameTimeMs) {
 
 
 GameLoop.prototype.routine = function (frameTimeMs) {
-
     // Limit the frame rate.    
     if (frameTimeMs < this.lastFrameTimeMs + (1000 / this.maxFPS)) {
         requestAnimationFrame(this.routine.bind(this))
