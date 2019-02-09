@@ -1,4 +1,4 @@
-export default function Debris(pos = this.pos , size = this.size, imgUrl = 'Assets/debris-default.svg') {
+export default function Debris(pos = this.pos , size = this.size, imgUrl = 'Assets/default-debris.svg') {
     this.pos = pos
     this.size = size
     this.sprite.src = imgUrl
@@ -7,24 +7,26 @@ export default function Debris(pos = this.pos , size = this.size, imgUrl = 'Asse
 Debris.prototype.sprite = new Image()
 
 Debris.prototype.pos = {
-    x: 0,
+    x: 50,
     y: 0
 }
 
 Debris.prototype.size = {
-    w: 0,
+    w: 50,
     h: 0
 }
 
-Debris.prototype.update = function() {
+Debris.prototype.update = function(delta) {
+    const speed = 0.05 * delta
 
+    if(!isNaN(speed)) {
+        this.pos.x = this.pos.x + speed
+    }
 }
 
 /**
  * @param {CanvasRenderingContext2D} ctx
  */
 Debris.prototype.draw = function(ctx) {
-    const img = new Image();
-    img.src = 'Assets/cat.svg';
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(this.sprite, this.pos.x, this.pos.y);
 }
