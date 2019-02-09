@@ -5,12 +5,13 @@ import './gamemanager.js';
 import Cat from './cat.js';
 import Debris from './debris.js';
 
+const RANDOM_IMAGES = ['./Assets/default-debris.svg', './Assets/iss.svg', 'Assets/Flying_Spaghetti_Monster.svg']
+
 const canvas = document.getElementById('screen');
 const ctx = canvas.getContext('2d');
 const counter = new Counter();
 const loop = new GameLoop();
 const testObj = new ClickableObject('./Assets/default-debris.svg', {x: 20, y: 20});
-
 const cat = new Cat();
 
 loop.que.push(counter)
